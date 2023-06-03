@@ -30,7 +30,7 @@ const fetchBreeds = async () => {
     try {
       const response = await fetch(`https://api.thecatapi.com/v1/images/search?api_key=${myKey}&breed_id=${breedId}`);
       const data = await response.json();
-      console.log(data);
+    //   console.log(data);
       return data;
     } catch (error) {
       console.log(error.toString());
@@ -54,7 +54,7 @@ catInfoDiv.innerHTML='';
 const catData = await fetchCatByBreed(breedId);
   if(catData.length > 0) {
       const renderInfo = catData.map(x => {
-       console.log(x);
+    //    console.log(x);
 
         return `<img class="img" src="${x.url}" alt="${x.breeds[0].name}">
         <h2>${x.breeds[0].name}</h2>
@@ -64,7 +64,7 @@ const catData = await fetchCatByBreed(breedId);
        
        
       })
-      console.log(`jestem tutaj po zmianie`)
+    //   console.log(`jestem tutaj po zmianie`)
       catInfoDiv.insertAdjacentHTML('beforeend', renderInfo)
     
       loader.classList.add('hidden');
